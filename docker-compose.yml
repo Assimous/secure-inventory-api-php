@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    image: php:8.2-apache
+    container_name: inventory_api_2023
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html/
+    environment:
+      - ENVIRONMENT=production
+      - DB_CONNECTION=sqlite
+    restart: unless-stopped
