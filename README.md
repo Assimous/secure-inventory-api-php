@@ -18,6 +18,7 @@ Developed in **2023**, this project is a lightweight, high-performance RESTful A
 Because this API is fully containerized, deployment takes less than a minute.
 
 ### 1. Start the Server
+```bash
 git clone [https://github.com/Assimous/secure-inventory-api-php.git](https://github.com/Assimous/secure-inventory-api-php.git)
 cd secure-inventory-api-php
 docker-compose up -d
