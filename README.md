@@ -21,3 +21,24 @@ Because this API is fully containerized, deployment takes less than a minute.
 git clone [https://github.com/Assimous/secure-inventory-api-php.git](https://github.com/Assimous/secure-inventory-api-php.git)
 cd secure-inventory-api-php
 docker-compose up -d
+
+
+2. Endpoints Documentation
+GET /api/products
+Retrieves the current inventory. No authentication required for read-only access.
+
+curl -X GET http://localhost:8080/index.php/api/products
+POST /api/products
+Adds a new product to the inventory. Requires API Key.
+
+
+curl -X POST http://localhost:8080/index.php/api/products \
+     -H "Content-Type: application/json" \
+     -H "X-API-KEY: prod_key_2023_secure" \
+     -d '{"sku":"SRV-99", "name":"Enterprise Server", "quantity":5, "price":2499.99}'
+     
+ Security Note
+This repository contains the core logic. In the actual 2023 production environment, the database connection was routed to a separate managed MySQL cluster, and X-API-KEY secrets were injected via CI/CD pipelines.
+
+Author
+Assimous 
