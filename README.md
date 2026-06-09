@@ -41,5 +41,5 @@ curl -X POST http://localhost:8080/index.php/api/products \
  Security Note
 This repository contains the core logic. In the actual 2023 production environment, the database connection was routed to a separate managed MySQL cluster, and X-API-KEY secrets were injected via CI/CD pipelines.
 
-Author
+ Author
 Assimous 
